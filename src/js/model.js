@@ -22,6 +22,6 @@ export async function loadRecipe(id) {
       ingredients: recipe.ingredients,
     };
   } catch (error) {
-    console.log(error);
+    throw error;
   }
 }
