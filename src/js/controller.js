@@ -1,5 +1,6 @@
 import * as model from './model.js';
 import recipeView from './views/recipeView.js';
+import headerView from './views/headerView.js';
 
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
@@ -22,3 +23,4 @@ async function controlRecipes() {
 }
 
 ['hashchange', 'load'].forEach(event => window.addEventListener(event, controlRecipes));
+headerView.render();
