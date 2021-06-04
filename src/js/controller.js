@@ -1,17 +1,18 @@
 import icons from 'url:../img/icons.svg';
-console.log(icons);
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
 
 const recipeContainer = document.querySelector('.recipe');
 
-const timeout = function (s) {
+function timeout(s) {
   return new Promise(function (_, reject) {
     setTimeout(function () {
       reject(new Error(`Request took too long! Timeout after ${s} second`));
     }, s * 1000);
   });
-};
+}
 
-renderSpinner = function (parentEl) {
+function renderSpinner(parentEl) {
   const markup = `
     <div class="spinner">
       <svg>
@@ -22,7 +23,7 @@ renderSpinner = function (parentEl) {
 
   parentEl.innerHTML = '';
   parentEl.insertAdjacentHTML('afterbegin', markup);
-};
+}
 
 async function showRecipe() {
   try {
