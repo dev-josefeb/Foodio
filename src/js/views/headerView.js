@@ -12,7 +12,7 @@ class HeaderView extends View {
           <input
             type="text"
             class="search__field"
-            placeholder="Search over 1,000,000 recipes..."
+            placeholder="Search for a recipe, e.g. 'pizza'"
           />
           <button class="btn search__btn">
             <svg class="search__icon">
