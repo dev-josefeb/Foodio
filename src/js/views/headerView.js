@@ -1,13 +1,9 @@
+import View from './View.js';
 import icons from 'url:../../img/icons.svg';
 import logo from 'url:../../img/logo.png';
 
-class HeaderView {
-  #parentElement = document.querySelector('.header');
-
-  render() {
-    const htmlMarkup = this._generateMarkup();
-    this.#parentElement.innerHTML = htmlMarkup;
-  }
+class HeaderView extends View {
+  _parentElement = document.querySelector('.header');
 
   _generateMarkup() {
     return `
