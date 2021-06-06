@@ -46,6 +46,9 @@ export async function loadSearchResults(query) {
         image: recipe.image_url,
       };
     });
+
+    // Reset page when loading new results
+    state.search.page = 1;
   } catch (error) {
     throw error;
   }
