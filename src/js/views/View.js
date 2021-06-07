@@ -13,10 +13,11 @@ export default class View {
     this._parentElement.insertAdjacentHTML('afterbegin', htmlMarkup);
   }
 
-  render(data) {
+  render(data, parentEl) {
     if (!data || (Array.isArray(data) && data.length === 0)) return this.renderError();
     this._data = data;
 
+    if (parentEl) this._parentElement = document.querySelector(parentEl);
     this._render();
   }
 
@@ -25,6 +26,7 @@ export default class View {
   }
 
   update(data) {
+    if (data.length === 0) return;
     this._data = data;
 
     const newMarkup = this._generateMarkup();
